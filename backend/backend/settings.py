@@ -1,3 +1,4 @@
+
 """
 Django settings for backend project.
 
@@ -116,28 +117,28 @@ if os.getenv('GAE_APPLICATION', None):
             'NAME': 'blackpearl',
         }
     }
-else:
-    # Running locally so connect to either a local MySQL instance or connect to Cloud SQL via the proxy. 
-    # To host the database locally
-    # run $ ./cloud_sql_proxy -instances=blackpearl2:us-central1:blackpearl=tcp:3306
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '127.0.0.1',
-            'PORT': '3306',
-            'NAME': 'blackpearl',
-            'USER': 'xoro',
-            'PASSWORD': '',
-        }
-    }
 # else:
-#     # run offline database
+#     # Running locally so connect to either a local MySQL instance or connect to Cloud SQL via the proxy. 
+#     # To host the database locally
+#     # run $ ./cloud_sql_proxy -instances=blackpearl2:us-central1:blackpearl=tcp:3306
 #     DATABASES = {
 #         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': 'db.sqlite3',
+#             'ENGINE': 'django.db.backends.mysql',
+#             'HOST': '127.0.0.1',
+#             'PORT': '3306',
+#             'NAME': 'blackpearl',
+#             'USER': 'xoro',
+#             'PASSWORD': '',
 #         }
 #     }
+else:
+    # run offline database
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -188,10 +189,10 @@ REST_FRAMEWORK = {
     # ]
 
      'DEFAULT_AUTHENTICATION_CLASSES': [
-       'rest_framework.authentication.TokenAuthentication',
-     #  'rest_framework.authentication.BasicAuthentication', # if this one is on, we can't do even login 
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.BasicAuthentication', 
         'rest_framework.authentication.SessionAuthentication',
-         'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication'
      ],
     
      

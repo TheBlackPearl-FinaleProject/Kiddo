@@ -1,11 +1,13 @@
 {
   "scripts": {
     "start": "python manage.py runserver",
+    "install": "pip install -r requirements.txt",
     "create": "python -m venv venv",
     "venv": ". venv/Scripts/activate",
     "mm": "python manage.py makemigrations api",
     "m": "python manage.py migrate",
-    "super": "python manage.py createsuperuser"
+    "super": "python manage.py createsuperuser",
+    "freeze": "pip freeze > requirements.txt"
   },
   "dependencies": {
     "django": "^1.0.0"

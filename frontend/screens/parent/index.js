@@ -110,7 +110,7 @@ class MusicApp extends Component {
       <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'flex-end'}}>
         {/* Background Picture */}
         <Animated.View style={{...StyleSheet.absoluteFill, transform: [{ translateY: this.bgY }]}}>
-          <Image source={require('../parent/PG.png')} style={{ flex: 1, height: null, width: null }}/>
+          <Image source={require('./PG.png')} style={{ flex: 1, height: null, width: null }}/>
         </Animated.View>
         {/* Landpage Content */}
         <View style={{ height: height / 3, justifyContent: 'center' }}>

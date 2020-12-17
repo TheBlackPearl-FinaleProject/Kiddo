@@ -11,16 +11,25 @@ import { connect } from 'react-redux';
      render(){
          console.log(this.props.videolink)
     return(
-        <WebView
-        source={{
-          uri:this.props.videolink
-        }}
+      
+      <WebView
+      style = {styles.vid}
+      source={{
+        uri:this.props.videolink
+      }}
 />
+
     )
 }}
 
 const styles = StyleSheet.create({
-    
+  container:{
+    flex : 1,
+  }, 
+  vid:{
+      width:500,
+      height:500
+    }
 })
 const mapStateToProps = (state) => {
     return {

@@ -38,7 +38,7 @@ urlpatterns = [
    path("", include( router.urls )),
    path("", include('djoser.urls')),
    path("", include('djoser.urls.authtoken')), #api/auth/
-   #    url(r'^account/', include('djoser.urls')),
+#    url(r'^account/', include('djoser.urls')),
    url(r'^auth/login/', jwt_views.obtain_jwt_token, name='auth'),
    path('checkserver/',views.index,name='index'),
    path('signup/', views.signup, name='signup'),

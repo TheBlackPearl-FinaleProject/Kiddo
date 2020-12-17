@@ -37,6 +37,7 @@ This website gives a safe envorinment for kids to play and learn
 * Jest
 * Enzyme
 * Stripe
+* Circle Ci
 ### Programs ###
 * VS Code
 * Android Studio
@@ -52,6 +53,12 @@ This website gives a safe envorinment for kids to play and learn
 * curl -->
 * gem -->
 * pod -->
+* choco -->
+* circleci -->
+* react-native -->
+* xx xx xx xx xx
+* brew -->
+* sudo -->
 
 ## Frontend ##
 * To install dependancies
@@ -118,6 +125,10 @@ This website gives a safe envorinment for kids to play and learn
 
 ## Members ##
 * Razan Abusamra - Scrum Master
+react native - expo - react animation - navigation - sliders - picutres - drawer
 * Hamdallah Fatayer - Co-Leader
+python - django - rest framework - google sdk - cloud sql - google app engine - android studio - jest - circle ci - android & ios platform testing
 * Noor Ashqar - Development
+react - expo - jest - database data control - videos - pictures - games - webview & iframe - sounds - songs - redux
 * Dima jaber - Development
+python - django - rest framework - jwt - django token - djoser 

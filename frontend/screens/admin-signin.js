@@ -2,15 +2,26 @@ import React, { useState } from 'react';
 import AsyncStorage from '@react-native-community/async-storage'
 import { StyleSheet, Text, View, Keyboard, TextInput, TouchableWithoutFeedback, TouchableOpacity, Button } from 'react-native';
 
+
+
 const [STORAGE_KEY] = '@save_token'
-export default function Signin ({navigation}) {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+class Signin extends React.Component {
+    constructor({navigation, frn}){
+        super({navigation, frn});
+        this.state = {
+           username: '',
+           password:'',
+           flag:0
+        }
+    }
+
+    // const [username, setUsername] = useState('');
+    // const [password, setPassword] = useState('');
     
-    const handleSubmit = () => {
+     handleSubmit = () => {
         
-        console.log('*****************************************')
-        console.log(username + "   " + password)
+        console.log('****************************')
+        console.log(this.state.username + "   " + this.state.password)
         // fetch('http://127.0.0.1:5000/signin', {
         //     method: 'POST',
         //     headers: {
@@ -22,8 +33,10 @@ export default function Signin ({navigation}) {
         //         password: password
         //     })
         // }); 
-        //for then---> alert   
-var raw = JSON.stringify({"username":username,"password":password});
+        //for then---> alert
+
+     
+ var raw = JSON.stringify({"username":this.state.username,"password":this.state.password});
 var requestOptions = {
   method: 'POST',
   body: raw ,
@@ -40,13 +53,20 @@ fetch("https://blackpearl2.ew.r.appspot.com/auth/login/", requestOptions)
         if(result.token !== undefined){
     
           // AsyncStorage.setItem('@storage_Key', result.token)
+          console.log(result.token)
           AsyncStorage.setItem('@token', result.token)
          
           .then(()=>{
-            location.reload();
-            //navigation.navigate('Home')
+           // location.reload();
+           //this.setState({flag: 1})
+            console.log(this.props.navigation)
+            console.log('********** frn from admin-signin ', this.props.frn)
+            //RestartAndroid.restart()
+            RNRestart.Restart();
+          //  this.props.navigation.push('Home');
+            //this.props.navigation.navigate('Home')
           })
-          console.log('****************************************')
+          console.log('*******************||**||*********************')
           //  console.log(AsyncStorage.getItem('@token'))
           } 
             
@@ -54,15 +74,16 @@ fetch("https://blackpearl2.ew.r.appspot.com/auth/login/", requestOptions)
         )
   .catch(error => console.log('error', error));
         
-        // setUsername('')
+         //setUsername('')
         // setPassword('')
     }
-
+    
+    render(){
     return (
         <TouchableWithoutFeedback
             onPress={() => {
                 Keyboard.dismiss();
-                console.log('diss')
+                console.log('disspacito')
             }}
         >
             <View style={styles.container}>
@@ -73,7 +94,9 @@ fetch("https://blackpearl2.ew.r.appspot.com/auth/login/", requestOptions)
                     <TextInput
                         style={styles.inputText}
                         placeholder="username..."
-                        onChangeText={text => setUsername(text)} />
+                        onChangeText={text => //setUsername(text)
+                            this.setState({username: text})
+                        } />
                 </View>
 
                 <View style={styles.inputView} >
@@ -81,21 +104,23 @@ fetch("https://blackpearl2.ew.r.appspot.com/auth/login/", requestOptions)
                         secureTextEntry
                         style={styles.inputText}
                         placeholder="Password..."
-                        onChangeText={text => setPassword(text)} />
+                        onChangeText={text => //setPassword(text)
+                            this.setState({password: text})
+                        } />
                 </View>
 
                 <TouchableOpacity>
                     <Text style={styles.forgot}>Forgot Password?</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.loginBtn} onPress={handleSubmit}>
+                <TouchableOpacity style={styles.loginBtn} onPress={this.handleSubmit}>
                     <Text  style={styles.loginText}>LOGIN</Text>
                 </TouchableOpacity>
             </View>
 
         </TouchableWithoutFeedback>
     );
-}
+}}
 
 const styles = StyleSheet.create({
     container: {
@@ -142,5 +167,5 @@ const styles = StyleSheet.create({
         color: "black"
     }
 });
-
+export default Signin
 //headerRight: () => (<Icon.Button name="ios-home" size={20} backgroundColor={"#f4511e"} onPress={()=> navigation.navigate('Home')}/>),

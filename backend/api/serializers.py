@@ -19,15 +19,15 @@ class UserSerializer(UserCreateSerializer):
         model = User
         fields = [ 'username', 'password', 'email', 'phone', 'thumbnail', 'is_staff', 'is_superuser',]
 
-class HistorySerializer(UserCreateSerializer):
-    class Meta(UserCreateSerializer.Meta):
+class HistorySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
         model = History
-        fields = ['username', 'link', 'thumbnail', 'kind']
+        fields = ['user', 'link', 'thumbnail', 'kind']
 
-class DonationSerializer(UserCreateSerializer):
-    class Meta(UserCreateSerializer.Meta):
+class DonationSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
         model = Donation
-        fields = ['username', 'donation']
+        fields = ['user', 'amount']
 
 class RecordSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

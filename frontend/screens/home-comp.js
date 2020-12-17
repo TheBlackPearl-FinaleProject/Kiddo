@@ -1,3 +1,4 @@
+import { useLinkProps } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, FlatList,Button } from 'react-native';
 import CategoryItem from './category-item-card'

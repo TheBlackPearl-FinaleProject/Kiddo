@@ -3,7 +3,7 @@ import { StyleSheet, View, Text} from 'react-native';
 
 import { Asset } from 'expo-asset';
 import { AppLoading } from 'expo';
-import MusicApp from './parent/index';
+import MusicApp from './index';
 
 
 function cacheImages(images) {
@@ -24,7 +24,7 @@ class Parent extends Component{
     }
 }
 async _loadAssetsAsync() {
-    const imageAssets = cacheImages([require('./parent/PG.png')]);
+    const imageAssets = cacheImages([require('./PG.png')]);
 
     await Promise.all([...imageAssets]);
   }
