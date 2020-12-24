@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     marginVertical: 6,
     width: 250,
-    marginLeft: 80,
     marginTop: 33,
   },
   a2: {
@@ -102,7 +101,6 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     marginVertical: 6,
     width: 250,
-    marginLeft: 80,
   },
   a3: {
     flexDirection: "row",
@@ -116,7 +114,6 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     marginVertical: 6,
     width: 250,
-    marginLeft: 80,
   },
   text: {
     color: "#fff",
