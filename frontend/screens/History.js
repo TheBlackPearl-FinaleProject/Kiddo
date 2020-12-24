@@ -94,12 +94,12 @@ class History extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.container}>
+        <View style={styles.content}>
           <FlatList
             data={this.state.result}
             renderItem={({ item, i }) => (
               <TouchableOpacity
-                style={styles.content}
+                style={styles.container}
                 onPress={() => this.go(item)}
                 key={i}
               >
@@ -107,9 +107,10 @@ class History extends Component {
                   <Image
                     source={{ uri: item.thumbnail }}
                     style={{
-                      width: 150,
-                      height: 150,
-                      borderRadius: 12,
+                      width: win.width / 3,
+                      height: win.width / 3,
+                      borderRadius: 8,
+                      margin: win.width / 40,
                     }}
                   />
                 </View>
@@ -137,18 +138,16 @@ class History extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
   },
   content: {
     backgroundColor: "white",
-    width: win.width/2,
-    height: win.width/2,
     flex: 1,
-    margin: win.width / 40,
+    padding: win.width / 10,
     justifyContent: "center",
+    paddingTop: win.width / 50,
   },
 });
+
 // Redux
 const mapStateToProps = (state) => {
   return {

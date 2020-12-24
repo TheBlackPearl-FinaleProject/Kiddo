@@ -163,7 +163,7 @@ class SignIn extends Component {
                   {
                     text: "Ok",
                     onPress: () => {
-                      this.props.navigation.navigate("Success");
+                      this.props.navigation.navigate("Profile");
                     },
                   },
                 ],
