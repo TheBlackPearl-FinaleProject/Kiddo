@@ -125,6 +125,11 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     marginTop: 15,
   },
+  image: {
+    flex: 1,
+    height: win.width,
+    width: win.width,
+  },
   infoContainer: {
     alignSelf: "center",
     alignItems: "center",

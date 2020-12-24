@@ -107,8 +107,8 @@ class History extends Component {
                   <Image
                     source={{ uri: item.thumbnail }}
                     style={{
-                      width: win.width / 3,
-                      height: win.width / 3,
+                      width: win.width,
+                      height: win.width,
                       borderRadius: 8,
                       margin: win.width / 40,
                     }}
@@ -138,6 +138,8 @@ class History extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: win.width / 3,
+    height: win.width / 3,
     justifyContent: "center",
     alignItems: "center"
   },

@@ -1,8 +1,7 @@
 // __mocks__/mocks.js
 import "react-native-gesture-handler/jestSetup";
-
 // This file is for jest to be able to understand some modules that are not normally easily compiled; using mocks
-if (window) {
+if (window!==undefined) {
   Object.defineProperty(window, "matchMedia", {
     writable: true,
     value: jest.fn().mockImplementation((query) => ({
@@ -19,6 +18,12 @@ if (window) {
 }
 
 require("jest-fetch-mock").enableMocks();
+jest.mock("react-native-vector-icons", () => {
+  return {
+    RNVectorIconsManager: jest.mock(),
+    createIconSetFromIcoMoon: jest.fn(),
+  };
+});
 jest.mock("react-native-reanimated", () => {
   const Reanimated = require("react-native-reanimated/mock");
   // The mock for `call` immediately calls the callback which is incorrect

@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    height: win.width / 2.5,
-    width: win.width / 2.5,
+    height: win.width,
+    width: win.width,
   },
   profileImage: {
     width: 200,
