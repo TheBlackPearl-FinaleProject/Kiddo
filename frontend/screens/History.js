@@ -142,8 +142,8 @@ const styles = StyleSheet.create({
   },
   content: {
     backgroundColor: "white",
-    width: 150,
-    height: 150,
+    width: win.width/2,
+    height: win.width/2,
     flex: 1,
     margin: win.width / 40,
     justifyContent: "center",
