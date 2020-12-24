@@ -154,7 +154,7 @@ class SignIn extends Component {
           AsyncStorage.setItem("@token", result.token).then(() => {
             AsyncStorage.setItem("@user", this.state.username).then(() => {
               location.reload();
-              this.props.navigation.navigate("Success");
+              this.props.navigation.navigate("Profile");
             });
           });
         } else {
