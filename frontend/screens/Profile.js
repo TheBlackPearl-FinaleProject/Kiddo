@@ -109,6 +109,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFF",
+    alignItems: "center",
+    justifyContent: "center",
   },
   text: {
     marginTop: 70,
@@ -127,8 +129,8 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    height: win.width,
-    width: win.width,
+    height: 200,
+    width: 200,
   },
   infoContainer: {
     alignSelf: "center",
@@ -139,7 +141,6 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "white",
     height: 70,
-    marginHorizontal: 75,
     borderRadius: 35,
     alignItems: "center",
     justifyContent: "center",

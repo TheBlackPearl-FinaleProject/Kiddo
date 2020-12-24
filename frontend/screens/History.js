@@ -107,9 +107,9 @@ class History extends Component {
                   <Image
                     source={{ uri: item.thumbnail }}
                     style={{
-                      width: win.width,
-                      height: win.width,
-                      borderRadius: 8,
+                      width: 200,
+                      height: 200,
+                      borderRadius: 12,
                       margin: win.width / 40,
                     }}
                   />

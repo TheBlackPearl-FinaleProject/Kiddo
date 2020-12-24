@@ -2,8 +2,8 @@
 [![TheBlackPearl](https://circleci.com/gh/TheBlackPearl-FinaleProject/Kiddo.svg?style=shield)](https://github.com/TheBlackPearl-FinaleProject/Kiddo)
 [![GitHub forks](https://img.shields.io/github/forks/TheBlackPearl-FinaleProject/Kiddo?style=plastic)](https://github.com/TheBlackPearl-FinaleProject/Kiddo/network)
 ![GitHub last commit](https://img.shields.io/github/last-commit/TheBlackPearl-FinaleProject/Kiddo)
-![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/TheBlackPearl-FinaleProject/Kiddo)
 [![TheBlackPearl](https://circleci.com/gh/TheBlackPearl-FinaleProject/Kiddo.svg?style=svg)](https://github.com/TheBlackPearl-FinaleProject/Kiddo)
+
 # Project Name : KIDDO
 
 ## Team
