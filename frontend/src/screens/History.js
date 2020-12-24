@@ -110,7 +110,7 @@ class History extends Component {
                     style={{
                       width: win.width / 5,
                       height: win.width / 5,
-                      borderRadius: 8,
+                      borderRadius: 18,
                       margin: win.width / 40,
                     }}
                   />
