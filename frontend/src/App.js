@@ -46,7 +46,6 @@ import Edit from "./screens/user/Edit";
 import History from "./screens/History";
 import SignIn from "./screens/user/SignIn";
 import SignUp from "./screens/user/SignUp";
-import Success from "./screens/user/Success";
 // Navigation
 const Drawer = createDrawerNavigator();
 const HomeStack = createStackNavigator();
@@ -55,6 +54,7 @@ const DonateStack = createStackNavigator();
 const SignInStack = createStackNavigator();
 const ProfileStack = createStackNavigator();
 const HistoryStack = createStackNavigator();
+const EditStack = createStackNavigator();
 // Home Stack
 const HomeStackScreen = ({ navigation }) => {
   return (
@@ -549,29 +549,6 @@ const ProfileStackScreen = ({ navigation }) => {
           ),
         }}
       />
-      <ProfileStack.Screen
-        name="History"
-        component={History}
-        options={{
-          title: "Kiddo",
-          headerLeft: () => (
-            <Icon.Button
-              name="ios-menu"
-              size={25}
-              backgroundColor={"#f4511e"}
-              onPress={() => navigation.openDrawer()}
-            />
-          ),
-          headerRight: () => (
-            <Icon.Button
-              name="ios-home"
-              size={20}
-              backgroundColor={"#f4511e"}
-              onPress={() => navigation.navigate("Home")}
-            />
-          ),
-        }}
-      />
     </ProfileStack.Navigator>
   );
 };
@@ -607,53 +584,6 @@ const SignUpStackScreen = ({ navigation }) => {
                   routes: [{ name: "Home" }],
                 })
               }
-            />
-          ),
-        }}
-      />
-
-      <SignUpStack.Screen
-        name="Success"
-        component={Success}
-        options={{
-          title: "Kiddo",
-          headerLeft: () => (
-            <Icon.Button
-              name="ios-menu"
-              size={25}
-              backgroundColor={"#f4511e"}
-              onPress={() => navigation.openDrawer()}
-            />
-          ),
-          headerRight: () => (
-            <Icon.Button
-              name="ios-home"
-              size={20}
-              backgroundColor={"#f4511e"}
-              onPress={() => navigation.navigate("Home")}
-            />
-          ),
-        }}
-      />
-      <SignUpStack.Screen
-        name="SignIn"
-        component={SignIn}
-        options={{
-          title: "Kiddo",
-          headerLeft: () => (
-            <Icon.Button
-              name="ios-menu"
-              size={25}
-              backgroundColor={"#f4511e"}
-              onPress={() => navigation.openDrawer()}
-            />
-          ),
-          headerRight: () => (
-            <Icon.Button
-              name="ios-home"
-              size={20}
-              backgroundColor={"#f4511e"}
-              onPress={() => navigation.navigate("Home")}
             />
           ),
         }}
@@ -699,33 +629,10 @@ const SignInStackScreen = ({ navigation }) => {
           ),
         }}
       />
-      <SignInStack.Screen
-        name="Success"
-        component={Success}
-        options={{
-          title: "Kiddo",
-          headerLeft: () => (
-            <Icon.Button
-              name="ios-menu"
-              size={25}
-              backgroundColor={"#f4511e"}
-              onPress={() => navigation.openDrawer()}
-            />
-          ),
-          headerRight: () => (
-            <Icon.Button
-              name="ios-home"
-              size={20}
-              backgroundColor={"#f4511e"}
-              onPress={() => navigation.navigate("Home")}
-            />
-          ),
-        }}
-      />
     </SignInStack.Navigator>
   );
 };
-
+// History Stack
 const HistoryStackScreen = ({ navigation }) => {
   return (
     <HistoryStack.Navigator
@@ -766,6 +673,47 @@ const HistoryStackScreen = ({ navigation }) => {
     </HistoryStack.Navigator>
   );
 };
+// Edit Stack
+const EditStackScreen = ({ navigation }) => {
+  return (
+    <EditStack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#f4511e",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
+      <EditStack.Screen
+        name="Edit"
+        component={Edit}
+        options={{
+          title: "Kiddo",
+          headerLeft: () => (
+            <Icon.Button
+              name="ios-menu"
+              size={25}
+              backgroundColor={"#f4511e"}
+              onPress={() => navigation.openDrawer()}
+            />
+          ),
+          headerRight: () => (
+            <Icon.Button
+              name="ios-home"
+              size={20}
+              backgroundColor={"#f4511e"}
+              onPress={() => navigation.navigate("Home")}
+            />
+          ),
+        }}
+      />
+    </EditStack.Navigator>
+  );
+};
 // The App
 class App extends React.Component {
   constructor() {
@@ -791,6 +739,7 @@ class App extends React.Component {
               <Drawer.Screen name="SignUp" component={SignUpStackScreen} />
               <Drawer.Screen name="Profile" component={ProfileStackScreen} />
               <Drawer.Screen name="History" component={HistoryStackScreen} />
+              <Drawer.Screen name="Edit" component={EditStackScreen} />
             </Drawer.Navigator>
           </NavigationContainer>
         </SafeAreaProvider>
